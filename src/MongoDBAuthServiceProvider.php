@@ -44,8 +44,9 @@ class MongoDBAuthServiceProvider extends ServiceProvider
             // Registering package commands.
             // $this->commands([]);
 
-            Sanctum::usePersonalAccessTokenModel(PersonalAccessToken::class);
         }
+
+        Sanctum::usePersonalAccessTokenModel(PersonalAccessToken::class);
     }
 
     /**
