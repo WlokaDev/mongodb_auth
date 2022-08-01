@@ -7,7 +7,12 @@ use Laravel\Sanctum\Contracts\HasAbilities;
 
 class PersonalAccessToken extends Model implements HasAbilities
 {
-    protected $connection = 'mongodb_auth';
+    public function setConnection($name): PersonalAccessToken
+    {
+        return parent::setConnection(
+            config('mongodb_auth.connection_name')
+        );
+    }
 
     /**
      * The attributes that should be cast to native types.

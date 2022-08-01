@@ -9,5 +9,10 @@ class User extends Authenticatable
 {
     use HasApiTokensTrait;
 
-    protected $connection = 'mongodb_auth';
+    public function setConnection($name): User
+    {
+        return parent::setConnection(
+            config('mongodb_auth.connection_name')
+        );
+    }
 }

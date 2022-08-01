@@ -23,7 +23,7 @@ class MongoDBAuthServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/database.php' => config_path('database.php'),
+                __DIR__ . '/../config/mongodb_auth.php' => config_path('mongodb_auth.php'),
             ], 'config');
 
             // Publishing the views.
@@ -55,7 +55,7 @@ class MongoDBAuthServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__ . '/../config/database.php', 'database');
+        $this->mergeConfigFrom(__DIR__ . '/../config/mongodb_auth.php', 'mongodb_auth');
 
         // Register the main class to use with the facade
         $this->app->singleton('mongodbauth', function () {
