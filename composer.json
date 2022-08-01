@@ -1,0 +1,56 @@
+{
+    "name": "wlokadev/mongodbauth",
+    "description": "Package for authorize via mongodb",
+    "keywords": [
+        "wlokadev",
+        "mongodbauth"
+    ],
+    "homepage": "https://github.com/wlokadev/mongodbauth",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Arkadiusz Wloka",
+            "email": "arkadiusz.wloka.dev@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "jenssegers/mongodb": "^3.9",
+        "laravel/sanctum": "^2.14.1",
+        "illuminate/contracts": "^9.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wlokadev\\MongoDBAuth\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Wlokadev\\MongoDBAuth\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wlokadev\\MongoDBAuth\\MongoDBAuthServiceProvider"
+            ],
+            "aliases": {
+                "MongoDBAuth": "Wlokadev\\MongoDBAuth\\MongoDBAuthFacade"
+            }
+        }
+    }
+}
