@@ -41,11 +41,6 @@ class MongoDBAuthServiceProvider extends ServiceProvider
                 __DIR__.'/../resources/lang' => resource_path('lang/vendor/mongodbauth'),
             ], 'lang');*/
 
-            // Publishing the model
-            $this->publishes([
-                __DIR__ . './../Models/User.php' => app_path('Models/User.php'),
-            ], 'models');
-
             // Registering package commands.
             // $this->commands([]);
 

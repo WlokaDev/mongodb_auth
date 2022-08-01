@@ -5,7 +5,7 @@ namespace Wlokadev\MongoDBAuth\Models;
 use Jenssegers\Mongodb\Eloquent\Model;
 use Laravel\Sanctum\Contracts\HasAbilities;
 
-class PersonalAccessToken extends Model implements HasAbilities
+final class PersonalAccessToken extends Model implements HasAbilities
 {
     public function __construct(array $attributes = [])
     {

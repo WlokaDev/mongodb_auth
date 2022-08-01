@@ -14,6 +14,7 @@ class MongoDBAuthFacade extends Facade
      *
      * @return string
      */
+
     protected static function getFacadeAccessor()
     {
         return 'mongodbauth';
