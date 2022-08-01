@@ -3,6 +3,8 @@
 namespace Wlokadev\MongoDBAuth;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Sanctum\Sanctum;
+use Wlokadev\MongoDBAuth\Models\PersonalAccessToken;
 
 class MongoDBAuthServiceProvider extends ServiceProvider
 {
@@ -41,6 +43,8 @@ class MongoDBAuthServiceProvider extends ServiceProvider
 
             // Registering package commands.
             // $this->commands([]);
+
+            Sanctum::usePersonalAccessTokenModel(PersonalAccessToken::class);
         }
     }
 
