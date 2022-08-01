@@ -7,11 +7,11 @@ use Laravel\Sanctum\Contracts\HasAbilities;
 
 class PersonalAccessToken extends Model implements HasAbilities
 {
-    public function setConnection($name): PersonalAccessToken
+    public function __construct(array $attributes = [])
     {
-        return parent::setConnection(
-            config('mongodb_auth.connection_name')
-        );
+        parent::__construct($attributes);
+
+        $this->connection = config('mongodb_auth.connection_name');
     }
 
     /**
